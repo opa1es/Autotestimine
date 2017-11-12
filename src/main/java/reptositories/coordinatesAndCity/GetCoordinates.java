@@ -4,6 +4,9 @@ package reptositories.coordinatesAndCity;
 public class GetCoordinates {
 
 
+
+    //TODO: implement in future
+
     public double coordinateX;
     public double coordinateY;
 

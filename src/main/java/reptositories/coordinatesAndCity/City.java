@@ -2,20 +2,20 @@ package reptositories.coordinatesAndCity;
 
 public class City {
 
-    public String city;
+    public String name;
     public String code;
 
-    public City(String city, String code) {
-        this.city = city;
+    private City(String name, String code) {
+        this.name = name;
         this.code = code;
     }
 
     public String getCity() {
-        return city;
+        return name;
     }
 
     public void setCity(String city) {
-        this.city = city;
+        this.name = city;
     }
 
     public String getCode() {
