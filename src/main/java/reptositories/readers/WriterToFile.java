@@ -4,16 +4,14 @@ package reptositories.readers;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import java.util.Arrays;
-import java.util.List;
-
 public class WriterToFile {
 
-    public void writeTemperature(String fileName, double temperature) {
-        List<String> temperatureToWrite = Arrays.asList("Current temperature: ", Double.toString(temperature));
+
+    public void writeTemperature(String fileName, String cityName, double temperature) {
         try {
-            FileWriter writer = new FileWriter(fileName + ".txt", true);
-            writer.write(temperatureToWrite + "\n");
+            FileWriter writer = new FileWriter(fileName, true);
+            writer.write("Temperature in " + cityName + " is : " + temperature + " Kelvins"+ "\n");
+            writer.close();
 
         } catch (IOException e) {
             e.printStackTrace();

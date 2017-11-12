@@ -4,6 +4,7 @@ package reptositories.requests;
 import org.json.JSONObject;
 import reptositories.coordinatesAndCity.City;
 import reptositories.json.JsonObjects;
+import reptositories.readers.WriterToFile;
 import reptositories.unitsConverter.ConvertTemperature;
 
 import java.io.IOException;
@@ -45,14 +46,18 @@ public class RequestWeather {
     public String getTemperatureAndWriteItToFileInCelsius(){
 
         ConvertTemperature convertTemperature = new ConvertTemperature();
-        return "Temperature in " + city.getName() + "is " + convertTemperature.KelvinToCelsius(getTemperature()) + " C";
+        WriterToFile writerToFile = new WriterToFile();
+        writerToFile.writeTemperature("temperatures.txt", city.name, temperature);
+        return "Temperature in " + city.getName() + " is " + convertTemperature.KelvinToCelsius(getTemperature()) + " C";
     }
 
 
     public String getTemperatureAndWriteItToFileInKelvin(){
 
-        ConvertTemperature convertTemperature = new ConvertTemperature();
-        return "Temperature in " + city.getName() + "is " + getTemperature() + " C";
+
+        WriterToFile writerToFile = new WriterToFile();
+        writerToFile.writeTemperature("temperatures.txt", city.name, temperature);
+        return "Temperature in " + city.getName() + " is " + getTemperature() + " C";
     }
 
 

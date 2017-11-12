@@ -15,7 +15,7 @@ public class ConnectTo {
 
 
     public static String buildLinkForForecast(City city){
-        return URL_FORECAST + "/forecast?q=" + city.name + "," + city.code + "&APPID=" + KEY;
+        return URL_FORECAST + city.name + "," + city.code + "&APPID=" + KEY;
     }
 
 
