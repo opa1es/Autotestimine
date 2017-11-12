@@ -7,6 +7,11 @@ import java.util.Date;
  */
 class Vahe {
 
+
+
+
+
+
     static String getInputCoordinates(String coordinates) {
         return null;
     }
