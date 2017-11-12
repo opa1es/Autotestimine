@@ -5,16 +5,16 @@ public class City {
     public String name;
     public String code;
 
-    private City(String name, String code) {
+    public City(String name, String code) {
         this.name = name;
         this.code = code;
     }
 
-    public String getCity() {
+    public String getName() {
         return name;
     }
 
-    public void setCity(String city) {
+    public void setName(String city) {
         this.name = city;
     }
 
@@ -28,12 +28,9 @@ public class City {
 
 
 
-    public static City buildNewCity(String city, String code) throws Exception{
-        if(city.length()<1 && code.length() < 1){
-            throw new Exception();
-        }else{
+    public static City buildNewCity(String city, String code){
+
             return new City(city,code);
-        }
 
     }
 
