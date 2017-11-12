@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class RequestWeather {
 
-    JsonObjects jsonObjects;
+    private JsonObjects jsonObjects = new JsonObjects();
     private City city;
     private double temperature;
     private JSONObject forecast;
