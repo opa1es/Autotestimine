@@ -8,8 +8,8 @@ import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
 
-import static reptositories.requests.ConnectTo.buildLinkForForecast;
-import static reptositories.requests.ConnectTo.buildLinkForRequest;
+import static reptositories.connection.ConnectTo.buildLinkForForecast;
+import static reptositories.connection.ConnectTo.buildLinkForRequest;
 
 public class ConnectionJson {
 

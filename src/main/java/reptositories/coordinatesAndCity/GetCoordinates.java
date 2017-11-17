@@ -18,6 +18,10 @@ public class GetCoordinates {
     }
 
 
+    public void setCoordinateY(double coordinateY) {
+        this.coordinateY = coordinateY;
+    }
+
     public void setCoordinateX(double coordinateX) {
         this.coordinateX = coordinateX;
     }
@@ -31,6 +35,10 @@ public class GetCoordinates {
         return coordinateY;
     }
 
+    @Override
+    public String toString(){
+        return coordinateX+":"+coordinateY;
+    }
 
 
 

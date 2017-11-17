@@ -15,12 +15,14 @@ public class RequestWeather {
     private City city;
     private double temperature;
     private JSONObject forecast;
+    private String coordinates;
 
     public RequestWeather(City city){
         this.city = city;
         try {
             this.getRequestInfo(jsonObjects.getRequest(city));
             this.getForecastInfo(jsonObjects.getForecast(city));
+            this.getCityCoordinates(jsonObjects.getRequest(city));
         }catch (IOException e) {
             e.printStackTrace();
         }
@@ -40,6 +42,11 @@ public class RequestWeather {
         return new RequestWeather(city);
 
     }
+    private void getCityCoordinates(JSONObject jsonObject){
+        double xxx = jsonObject.getJSONArray("list").getJSONObject(0).getJSONObject("coord").getDouble("lon");
+        double yyy = jsonObject.getJSONArray("list").getJSONObject(0).getJSONObject("coord").getDouble("lat");
+        this.coordinates = xxx + ":" + yyy;
+    }
 
 
 
@@ -51,6 +58,9 @@ public class RequestWeather {
         return "Temperature in " + city.getName() + " is " + convertTemperature.KelvinToCelsius(getTemperature()) + " C";
     }
 
+    public String getCoords(){
+        return this.coordinates;
+    }
 
     public String getTemperatureAndWriteItToFileInKelvin(){
 

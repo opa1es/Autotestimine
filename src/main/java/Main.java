@@ -9,7 +9,7 @@ public class Main {
         RequestWeather requestWeather = new RequestWeather(cityTallinn);
 
 
-        System.out.println(requestWeather.getTemperatureAndWriteItToFileInCelsius());
+        System.out.println(requestWeather.getCoords());
 
     }
 
