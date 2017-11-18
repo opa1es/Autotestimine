@@ -4,10 +4,8 @@ package reptositories.coordinatesAndCity;
 public class Coordinates {
 
 
-    double coordinateX;
-    double coordinateY;
-
-    public Coordinates(){}
+    private double coordinateX;
+    private double coordinateY;
 
 
     String getCoordinatesInFormat(){
@@ -23,5 +21,13 @@ public class Coordinates {
         return coordinateY;
     }
 
+
+
+
+    public void setCoordinates(double coordinateX, double coordinateY) {
+        this.coordinateX = coordinateX;
+        this.coordinateY = coordinateY;
+
+    }
 
 }

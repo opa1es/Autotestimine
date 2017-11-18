@@ -33,13 +33,6 @@ public class City {
         return coordinates.getCoordinatesInFormat();
     }
 
-        public void setCoordinates(double coordinateX, double coordinateY) {
-        coordinates.coordinateX = coordinateX;
-        coordinates.coordinateY = coordinateY;
-
-    }
-
-
     public Coordinates getCoordinates() {
         return coordinates;
     }
