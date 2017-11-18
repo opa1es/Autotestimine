@@ -16,27 +16,29 @@ public class WeatherRequest {
     private City city;
     private double temperature;
     private JSONArray forecast;
+    private JSONArray current;
 
     public WeatherRequest(City city) {
         this.city = city;
 
         try {
-            this.getRequestTemperature(jsonObjects.getRequest(city));
-            this.getForecastTemperature(jsonObjects.getForecast(city));
+            this.setRequest(jsonObjects.getRequest(city));
+            this.setForecast(jsonObjects.getForecast(city));
             this.setCityCoordinates(jsonObjects.getRequest(city));
+            this.setCurrentTemperature();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
 
-    private void getForecastTemperature(JSONObject jsonObject) {
+    private void setForecast(JSONObject jsonObject) {
         this.forecast = jsonObject.getJSONArray("list");
     }
 
 
-    private void getRequestTemperature(JSONObject jsonObject) {
-        this.temperature = jsonObject.getJSONArray("list").getJSONObject(0).getJSONObject("main").getDouble("temp");
+    private void setRequest(JSONObject jsonObject) {
+        this.current = jsonObject.getJSONArray("list");
     }
 
     private void setCityCoordinates(JSONObject jsonObject) {
@@ -54,7 +56,11 @@ public class WeatherRequest {
         return new ConvertTemperature().KelvinToCelsius(getTemperature()) + " C";
     }
 
+    public void setCurrentTemperature(){
+        this.temperature = this.current.getJSONObject(0).getJSONObject("main").getDouble("temp");
 
+
+    }
     public ArrayList<Double> getMinTemperaturesForThreeDays() {
         ArrayList<Double> minimums = new ArrayList<Double>();
         ArrayList<Double> temperatures = getAllMinimumsForNextThreeDays();
@@ -75,7 +81,7 @@ public class WeatherRequest {
         return minimums;
     }
 
-    public ArrayList<Double> getMaxTemperatureForThreeDays() {
+    public ArrayList<Double> getMaxTemperaturesForThreeDays() {
         ArrayList<Double> maximums = new ArrayList<Double>();
         ArrayList<Double> temperatures = getAllMaximumsForNextThreeDays();
         int counter = 0;
