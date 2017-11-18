@@ -1,6 +1,7 @@
 package reptositories.requests;
 
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 import reptositories.coordinatesAndCity.City;
 import reptositories.json.JsonObjects;
@@ -14,10 +15,9 @@ public class WeatherRequest {
     private JsonObjects jsonObjects = new JsonObjects();
     private City city;
     private double temperature;
-    private JSONObject forecast;
-
-
-
+    private JSONArray forecast;
+    private ArrayList<Double> minTemperaturesForecast = new ArrayList<Double>();
+    private ArrayList<Double> maxTemperaturesForecast = new ArrayList<Double>();
 
     public WeatherRequest(City city){
         this.city = city;
@@ -35,8 +35,51 @@ public class WeatherRequest {
 
 
     private void getForecastTemperature(JSONObject jsonObject) {
-        this.forecast = jsonObject.getJSONArray("list").getJSONObject(0);
+        this.forecast = jsonObject.getJSONArray("list");
     }
+
+
+    public ArrayList<Double> getMinTempForForFourDays(){
+        ArrayList<Double> minTemperatures = new ArrayList<Double>();
+        for(int i = 0; i < 40;i++){
+            minTemperatures.add(this.forecast.getJSONObject(i).getJSONObject("main").getDouble("temp_min"));
+        }
+        return minTemperatures;
+    }
+
+
+
+    public ArrayList<Double> getMaxTempForForFourDays(){
+        ArrayList<Double> maxTemperatures = new ArrayList<Double>();
+        for(int i = 0; i < 40;i++){
+            maxTemperatures.add(this.forecast.getJSONObject(i).getJSONObject("main").getDouble("temp_max"));
+        }
+        return maxTemperatures;
+    }
+
+
+    public ArrayList<Double> getMaxTempForEveryDay(){
+
+
+        return null;
+    }
+
+    public ArrayList<Double> getMinTempForEveryDay(){
+
+
+        return null;
+    }
+
+
+
+
+
+
+
+
+
+
+
 
     private void getRequestTemperature(JSONObject jsonObject){
         this.temperature = jsonObject.getJSONArray("list").getJSONObject(0).getJSONObject("main").getDouble("temp");
@@ -68,9 +111,6 @@ public class WeatherRequest {
 
 
 
-
-
-
     public String getFullInfo(){
 
 
@@ -78,26 +118,6 @@ public class WeatherRequest {
 
         return null;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -116,7 +136,7 @@ public class WeatherRequest {
         return temperature;
     }
 
-    public JSONObject getForecast() {
+    public JSONArray getForecast() {
         return forecast;
     }
 }

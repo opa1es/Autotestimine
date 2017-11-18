@@ -8,8 +8,9 @@ public class Main {
 
         WeatherRequest requestWeather = new WeatherRequest(cityTallinn);
 
-
-        System.out.println(requestWeather.getCityCoordinates());
+        System.out.println(requestWeather.getMinTempForForFourDays());
+        //System.out.println(requestWeather.getMaxTempForForFourDays());
+        //System.out.println(requestWeather.getMinTemp4());
 
     }
 

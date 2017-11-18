@@ -9,13 +9,6 @@ public class Coordinates {
 
     public Coordinates(){}
 
-    public Coordinates(double coordinateX, double coordinateY){
-        this.coordinateX = coordinateX;
-        this.coordinateY = coordinateY;
-    }
-
-
-
 
     String getCoordinatesInFormat(){
         return this.coordinateX + ":" + this.coordinateY;
