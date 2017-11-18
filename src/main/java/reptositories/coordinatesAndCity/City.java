@@ -2,8 +2,9 @@ package reptositories.coordinatesAndCity;
 
 public class City {
 
-    public String name;
-    public String code;
+    private String name;
+    private String code;
+    private Coordinates coordinates = new Coordinates();
 
     public City(String name, String code) {
         this.name = name;
@@ -28,16 +29,18 @@ public class City {
 
 
 
-    public static City buildNewCity(String city, String code){
+    public String getCityCoordinatesAsString(){
+        return coordinates.getCoordinatesInFormat();
+    }
 
-            return new City(city,code);
+        public void setCoordinates(double coordinateX, double coordinateY) {
+        coordinates.coordinateX = coordinateX;
+        coordinates.coordinateY = coordinateY;
 
     }
 
 
-
-
-
-
-
+    public Coordinates getCoordinates() {
+        return coordinates;
+    }
 }

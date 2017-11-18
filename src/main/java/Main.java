@@ -1,15 +1,15 @@
 import reptositories.coordinatesAndCity.City;
-import reptositories.requests.RequestWeather;
+import reptositories.requests.WeatherRequest;
 
 public class Main {
 
     public static void main(String[] args) {
         City cityTallinn = new City("Tallinn","EE");
 
-        RequestWeather requestWeather = new RequestWeather(cityTallinn);
+        WeatherRequest requestWeather = new WeatherRequest(cityTallinn);
 
 
-        System.out.println(requestWeather.getCoords());
+        System.out.println(requestWeather.getCityCoordinates());
 
     }
 

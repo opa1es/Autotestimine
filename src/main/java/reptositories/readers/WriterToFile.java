@@ -1,16 +1,18 @@
 package reptositories.readers;
 
 
+import reptositories.requests.WeatherRequest;
+
 import java.io.FileWriter;
 import java.io.IOException;
 
 public class WriterToFile {
 
 
-    public void writeTemperature(String fileName, String cityName, double temperature) {
+    public void writeFullInfo(WeatherRequest requestWeather) {
         try {
-            FileWriter writer = new FileWriter(fileName, true);
-            writer.write("Temperature in " + cityName + " is : " + temperature + " Kelvins"+ "\n");
+            FileWriter writer = new FileWriter("output.txt", true);
+            writer.write("Somthing to write...");
             writer.close();
 
         } catch (IOException e) {
