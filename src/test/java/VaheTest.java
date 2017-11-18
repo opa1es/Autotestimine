@@ -1,16 +1,11 @@
 import org.junit.Test;
-import sun.util.calendar.BaseCalendar;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by lll on 27-Sep-17.
- */
 public class VaheTest {
 
 
@@ -19,6 +14,7 @@ public class VaheTest {
         assertTrue(Vahe.setTemperatureByCoordinates("xxx yyy") > -99 &&
                 Vahe.setTemperatureByCoordinates("xxx yyy") < 99);
     }
+
 
     @Test
     public void testGetInputCoordinatesNotNull() {
