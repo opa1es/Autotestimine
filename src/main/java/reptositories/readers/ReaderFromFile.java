@@ -10,9 +10,10 @@ import java.util.ArrayList;
 public class ReaderFromFile {
 
 
-    public ArrayList<String> cityNames = new ArrayList<String>();
+    //public ArrayList<String> cityNames = new ArrayList<String>();
 
-    public void readCityNames() {
+    public ArrayList<String> readCityNamesAndReturnArray() {
+        ArrayList<String> cityNames = new ArrayList<String>();
         try {
             BufferedReader br = new BufferedReader(new FileReader("cities.txt"));
             String line;
@@ -26,6 +27,10 @@ public class ReaderFromFile {
             e.printStackTrace();
         }
 
+        return cityNames;
+
     }
+
+
 
 }

@@ -26,4 +26,17 @@ public class ConnectionJson {
         return connection.getInputStream();
     }
 
+    public static InputStream getConnectionRequest(String  city) throws IOException {
+        URLConnection connection = new URL(buildLinkForRequest(city)).openConnection();
+        connection.connect();
+        return connection.getInputStream();
+    }
+
+
+    public static InputStream getConnectionForecast(String  city) throws IOException {
+        URLConnection connection = new URL(buildLinkForForecast(city)).openConnection();
+        connection.connect();
+        return connection.getInputStream();
+    }
+
 }

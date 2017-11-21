@@ -40,4 +40,34 @@ public class JsonObjects {
     }
 
 
+    public JSONObject getRequest(String city) throws IOException {
+
+        InputStreamReader inputStreamReader = new InputStreamReader(ConnectionJson.getConnectionRequest(city));
+        BufferedReader reader = new BufferedReader(inputStreamReader);
+
+        StringBuilder stringBuilder = new StringBuilder();
+        String line;
+        while ((line = reader.readLine()) != null) {
+            stringBuilder.append(line);
+        }
+
+        return new JSONObject(stringBuilder.toString());
+    }
+
+
+
+    public JSONObject getForecast(String city) throws IOException {
+        InputStreamReader inputStreamReader = new InputStreamReader(ConnectionJson.getConnectionForecast(city));
+        BufferedReader reader = new BufferedReader(inputStreamReader);
+
+        StringBuilder stringBuilder = new StringBuilder();
+        String line;
+        while ((line = reader.readLine()) != null) {
+            stringBuilder.append(line);
+        }
+
+        return new JSONObject(stringBuilder.toString());
+    }
+
+
 }

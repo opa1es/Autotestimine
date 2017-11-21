@@ -11,6 +11,10 @@ public class City {
         this.code = code;
     }
 
+    public City(String name) {
+        this.name = name;
+    }
+
     public String getName() {
         return name;
     }

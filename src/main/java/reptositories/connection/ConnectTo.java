@@ -20,5 +20,15 @@ class ConnectTo {
 
 
 
+    static String buildLinkForRequest(String city){
+        return URL_REQUEST + city + "&APPID=" + KEY;
+    }
+
+    static String buildLinkForForecast(String city){
+        return URL_FORECAST + city + "&APPID=" + KEY;
+    }
+
+
+
 
 }

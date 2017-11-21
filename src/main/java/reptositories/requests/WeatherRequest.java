@@ -32,6 +32,19 @@ public class WeatherRequest {
         }
     }
 
+    public WeatherRequest(String name) {
+        this.city = new City(name);
+
+        try {
+            this.setRequest(jsonObjects.getRequest(name));
+            this.setForecast(jsonObjects.getForecast(name));
+            this.setCityCoordinates(jsonObjects.getRequest(name));
+            this.setCurrentTemperature();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     private void setForecast(JSONObject jsonObject) {
         this.forecast = jsonObject.getJSONArray("list");
@@ -130,7 +143,7 @@ public class WeatherRequest {
     }
 
 
-    public String getFullInfo() {
+    public String getFullWeatherInfo() {
         String output = "";
         output += getCity().getName() + " | Coordinates: " + getCityCoordinatesAsString() + "\n";
         output += "Current temperature: " + getCurrentTemperatureInCelsius() + "\n";
@@ -144,6 +157,16 @@ public class WeatherRequest {
 
         return output;
     }
+
+    public String getCurrentWeatherInfo() {
+        String output = "";
+        output += getCity().getName() + " | Coordinates: " + getCityCoordinatesAsString() + "\n";
+        output += "Current temperature: " + getCurrentTemperatureInCelsius() + "\n";
+        return output;
+
+
+    }
+
 
     public JsonObjects getJsonObjects() {
         return jsonObjects;
