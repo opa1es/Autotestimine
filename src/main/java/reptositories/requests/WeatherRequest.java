@@ -17,6 +17,7 @@ public class WeatherRequest {
     private double temperature;
     private JSONArray forecast;
     private JSONArray current;
+    private ConvertTemperature convertTemperature = new ConvertTemperature();
 
     public WeatherRequest(City city) {
         this.city = city;
@@ -30,7 +31,6 @@ public class WeatherRequest {
             e.printStackTrace();
         }
     }
-
 
 
     private void setForecast(JSONObject jsonObject) {
@@ -47,7 +47,7 @@ public class WeatherRequest {
         this.city.getCoordinates().setCoordinates(xxx, yyy);
     }
 
-    private void setCurrentTemperature(){
+    private void setCurrentTemperature() {
         this.temperature = this.current.getJSONObject(0).getJSONObject("main").getDouble("temp");
 
 
@@ -70,14 +70,13 @@ public class WeatherRequest {
     }
 
 
-
-    public String getCityCoordinates() {
+    public String getCityCoordinatesAsString() {
         return this.city.getCityCoordinatesAsString();
     }
 
     public String getCurrentTemperatureInCelsius() {
 
-        return new ConvertTemperature().KelvinToCelsius(getTemperature()) + " C";
+        return new ConvertTemperature().kelvinToCelsius(getTemperature()) + " C";
     }
 
 
@@ -122,12 +121,28 @@ public class WeatherRequest {
     }
 
 
+    public ArrayList<Double> getMaxTemperaturesForThreeDaysInCelsius() {
+        return convertTemperature.convertListKelvinToCelsius(getMaxTemperaturesForThreeDays());
+    }
 
-
+    public ArrayList<Double> getMinTemperaturesForThreeDaysInCelsius() {
+        return convertTemperature.convertListKelvinToCelsius(getMinTemperaturesForThreeDays());
+    }
 
 
     public String getFullInfo() {
-        return null;
+        String output = "";
+        output += getCity().getName() + " | Coordinates: " + getCityCoordinatesAsString() + "\n";
+        output += "Current temperature: " + getCurrentTemperatureInCelsius() + "\n";
+        output += "Temperature minimums / maximums for next three days: \n";
+        output += "1: " + getMinTemperaturesForThreeDaysInCelsius().get(0) + " / "
+                + getMaxTemperaturesForThreeDaysInCelsius().get(0) + "( °C)" + "\n";
+        output += "2: " + getMinTemperaturesForThreeDaysInCelsius().get(1) + " / "
+                + getMaxTemperaturesForThreeDaysInCelsius().get(1) + "( °C)" + "\n";
+        output += "3: " + getMinTemperaturesForThreeDaysInCelsius().get(2) + " / "
+                + getMaxTemperaturesForThreeDaysInCelsius().get(2) + "( °C)" + "\n";
+
+        return output;
     }
 
     public JsonObjects getJsonObjects() {

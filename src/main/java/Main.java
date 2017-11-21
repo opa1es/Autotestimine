@@ -17,8 +17,9 @@ public class Main {
 //        System.out.println(requestWeather.getCurrentMinimum());
 //        System.out.println(requestWeather.getForecastMinimums());
 
-        System.out.println(requestWeather.getMaxTemperaturesForThreeDays());
-        System.out.println(requestWeather.getMinTemperaturesForThreeDays());
+//        System.out.println(requestWeather.getMaxTemperaturesForThreeDays());
+        //System.out.println(requestWeather.getMaxTemperaturesForThreeDaysInCelsius());
+        System.out.println(requestWeather.getFullInfo());
     }
 
 

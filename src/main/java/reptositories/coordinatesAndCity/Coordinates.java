@@ -8,7 +8,7 @@ public class Coordinates {
     private double coordinateY;
 
 
-    String getCoordinatesInFormat(){
+    String getCoordinatesInFormat() {
         return this.coordinateX + ":" + this.coordinateY;
     }
 
@@ -20,8 +20,6 @@ public class Coordinates {
     public double getCoordinateY() {
         return coordinateY;
     }
-
-
 
 
     public void setCoordinates(double coordinateX, double coordinateY) {

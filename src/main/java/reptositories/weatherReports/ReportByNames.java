@@ -8,9 +8,4 @@ public class ReportByNames {
     ReaderFromFile readerFromFile = new ReaderFromFile();
 
 
-
-
-
-
-
 }

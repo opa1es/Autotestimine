@@ -7,6 +7,7 @@ import reptositories.coordinatesAndCity.City;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+
 public class JsonObjects {
 
 
@@ -17,13 +18,12 @@ public class JsonObjects {
 
         StringBuilder stringBuilder = new StringBuilder();
         String line;
-        while ((line = reader.readLine()) != null){
+        while ((line = reader.readLine()) != null) {
             stringBuilder.append(line);
         }
 
         return new JSONObject(stringBuilder.toString());
     }
-
 
 
     public JSONObject getForecast(City city) throws IOException {
@@ -32,18 +32,12 @@ public class JsonObjects {
 
         StringBuilder stringBuilder = new StringBuilder();
         String line;
-        while ((line = reader.readLine()) != null){
+        while ((line = reader.readLine()) != null) {
             stringBuilder.append(line);
         }
 
         return new JSONObject(stringBuilder.toString());
     }
-
-
-
-
-
-
 
 
 }

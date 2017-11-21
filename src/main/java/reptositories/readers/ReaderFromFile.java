@@ -14,13 +14,13 @@ public class ReaderFromFile {
 
     public void readCityNames() {
         try {
-            BufferedReader br = new BufferedReader(new FileReader("linnanimid.txt"));
+            BufferedReader br = new BufferedReader(new FileReader("cities.txt"));
             String line;
             while ((line = br.readLine()) != null) {
                 cityNames.add(line);
             }
 
-        }catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
