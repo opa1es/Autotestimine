@@ -32,10 +32,10 @@ public class WeatherRequest {
     }
 
 
+
     private void setForecast(JSONObject jsonObject) {
         this.forecast = jsonObject.getJSONArray("list");
     }
-
 
     private void setRequest(JSONObject jsonObject) {
         this.current = jsonObject.getJSONArray("list");
@@ -47,20 +47,40 @@ public class WeatherRequest {
         this.city.getCoordinates().setCoordinates(xxx, yyy);
     }
 
-    public String getCityCoordinates() {
-        return this.city.getCityCoordinatesAsString();
-    }
-
-    public String getTemperatureInCelsius() {
-
-        return new ConvertTemperature().KelvinToCelsius(getTemperature()) + " C";
-    }
-
-    public void setCurrentTemperature(){
+    private void setCurrentTemperature(){
         this.temperature = this.current.getJSONObject(0).getJSONObject("main").getDouble("temp");
 
 
     }
+
+    private ArrayList<Double> getAllMinimumsForNextThreeDays() {
+        ArrayList<Double> minTemperatures = new ArrayList<Double>();
+        for (int i = 0; i < 24; i++) {
+            minTemperatures.add(this.forecast.getJSONObject(i).getJSONObject("main").getDouble("temp_min"));
+        }
+        return minTemperatures;
+    }
+
+    private ArrayList<Double> getAllMaximumsForNextThreeDays() {
+        ArrayList<Double> maxTemperatures = new ArrayList<Double>();
+        for (int i = 0; i < 24; i++) {
+            maxTemperatures.add(this.forecast.getJSONObject(i).getJSONObject("main").getDouble("temp_max"));
+        }
+        return maxTemperatures;
+    }
+
+
+
+    public String getCityCoordinates() {
+        return this.city.getCityCoordinatesAsString();
+    }
+
+    public String getCurrentTemperatureInCelsius() {
+
+        return new ConvertTemperature().KelvinToCelsius(getTemperature()) + " C";
+    }
+
+
     public ArrayList<Double> getMinTemperaturesForThreeDays() {
         ArrayList<Double> minimums = new ArrayList<Double>();
         ArrayList<Double> temperatures = getAllMinimumsForNextThreeDays();
@@ -102,27 +122,13 @@ public class WeatherRequest {
     }
 
 
-    private ArrayList<Double> getAllMinimumsForNextThreeDays() {
-        ArrayList<Double> minTemperatures = new ArrayList<Double>();
-        for (int i = 0; i < 24; i++) {
-            minTemperatures.add(this.forecast.getJSONObject(i).getJSONObject("main").getDouble("temp_min"));
-        }
-        return minTemperatures;
-    }
 
-    private ArrayList<Double> getAllMaximumsForNextThreeDays() {
-        ArrayList<Double> maxTemperatures = new ArrayList<Double>();
-        for (int i = 0; i < 24; i++) {
-            maxTemperatures.add(this.forecast.getJSONObject(i).getJSONObject("main").getDouble("temp_max"));
-        }
-        return maxTemperatures;
-    }
+
 
 
     public String getFullInfo() {
         return null;
     }
-
 
     public JsonObjects getJsonObjects() {
         return jsonObjects;
@@ -139,4 +145,9 @@ public class WeatherRequest {
     public JSONArray getForecast() {
         return forecast;
     }
+
+    public JSONArray getCurrent() {
+        return current;
+    }
+
 }
