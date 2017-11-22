@@ -1,6 +1,7 @@
 import reptositories.coordinatesAndCity.City;
 import reptositories.requests.WeatherRequest;
 import reptositories.weatherReports.ReportByNames;
+import reptositories.weatherReports.ReportFromConsole;
 
 public class Main {
 
@@ -9,21 +10,19 @@ public class Main {
 
         WeatherRequest requestWeather = new WeatherRequest("Tallinn");
         ReportByNames reportByNames = new ReportByNames();
-//        WeatherRequestByName weatherRequestByName = new WeatherRequestByName("Tallinn");
-        //System.out.println(requestWeather.getAllMaximumsForFourDays());
-        //System.out.println(requestWeather.getMaxTemperatureForThreeDays());
-        //System.out.println(requestWeather.getMinTemperaturesForThreeDays());
-        //System.out.println(requestWeather.getMaxTempForForFourDays());
-        //System.out.println(requestWeather.getMinTemp4());
-//        System.out.println(requestWeather.getTemperatureInCelsius());
-//        System.out.println(requestWeather.getCurrentMinimum());
-//        System.out.println(requestWeather.getForecastMinimums());
+        ReportFromConsole reportFromConsole = new ReportFromConsole();
+
+
+        System.out.println(reportFromConsole.getFullWeatherInfoByInput());
+
+
+
 
 //        System.out.println(requestWeather.getMaxTemperaturesForThreeDays());
         //System.out.println(requestWeather.getMaxTemperaturesForThreeDaysInCelsius());
         //System.out.println(requestWeather.getFullInfo());
 //        System.out.println(requestWeather.getFullInfo());
-        System.out.println(reportByNames.getFullWeatherReportAndWriteToFile());
+//        System.out.println(reportByNames.getFullWeatherReportAndWriteToFile());
     }
 
 

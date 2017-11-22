@@ -10,8 +10,6 @@ import java.util.ArrayList;
 public class ReaderFromFile {
 
 
-    //public ArrayList<String> cityNames = new ArrayList<String>();
-
     public ArrayList<String> readCityNamesAndReturnArray() {
         ArrayList<String> cityNames = new ArrayList<String>();
         try {
@@ -30,7 +28,6 @@ public class ReaderFromFile {
         return cityNames;
 
     }
-
 
 
 }

@@ -55,7 +55,6 @@ public class JsonObjects {
     }
 
 
-
     public JSONObject getForecast(String city) throws IOException {
         InputStreamReader inputStreamReader = new InputStreamReader(ConnectionJson.getConnectionForecast(city));
         BufferedReader reader = new BufferedReader(inputStreamReader);

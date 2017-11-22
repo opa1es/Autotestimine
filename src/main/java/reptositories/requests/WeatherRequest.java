@@ -32,13 +32,13 @@ public class WeatherRequest {
         }
     }
 
-    public WeatherRequest(String name) {
-        this.city = new City(name);
+    public WeatherRequest(String cityName) {
+        this.city = new City(cityName);
 
         try {
-            this.setRequest(jsonObjects.getRequest(name));
-            this.setForecast(jsonObjects.getForecast(name));
-            this.setCityCoordinates(jsonObjects.getRequest(name));
+            this.setRequest(jsonObjects.getRequest(cityName));
+            this.setForecast(jsonObjects.getForecast(cityName));
+            this.setCityCoordinates(jsonObjects.getRequest(cityName));
             this.setCurrentTemperature();
         } catch (IOException e) {
             e.printStackTrace();

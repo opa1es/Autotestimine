@@ -32,8 +32,7 @@ public class City {
     }
 
 
-
-    public String getCityCoordinatesAsString(){
+    public String getCityCoordinatesAsString() {
         return coordinates.getCoordinatesInFormat();
     }
 

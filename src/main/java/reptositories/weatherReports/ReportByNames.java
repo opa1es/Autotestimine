@@ -10,43 +10,18 @@ public class ReportByNames {
     private ReaderFromFile readerFromFile = new ReaderFromFile();
     private WriterToFile writerToFile = new WriterToFile();
 
-    public String getCurrentWeatherReportAndWriteToFile(){
+
+    public String getFullWeatherReportAndWriteToFile() {
         String output = "";
-        for(String city: readerFromFile.readCityNamesAndReturnArray()){
+        for (String city : readerFromFile.readCityNamesAndReturnArray()) {
             WeatherRequest weatherRequest = new WeatherRequest(city);
-            output+=weatherRequest.getCurrentWeatherInfo();
-            output+= "\n";
+            output += weatherRequest.getFullWeatherInfo();
+            output += "\n";
         }
 
         writerToFile.writeFullInfo(output);
         return output;
     }
-
-
-    public String getFullWeatherReportAndWriteToFile(){
-        String output = "";
-        for(String city: readerFromFile.readCityNamesAndReturnArray()){
-            WeatherRequest weatherRequest = new WeatherRequest(city);
-            output+=weatherRequest.getFullWeatherInfo();
-            output+= "\n";
-        }
-
-        writerToFile.writeFullInfo(output);
-        return output;
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }
