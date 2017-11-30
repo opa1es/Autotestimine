@@ -8,6 +8,8 @@ import java.util.Scanner;
 public class ReportFromConsole {
 
 
+
+
     public String getFullWeatherInfoByInput() {
         Scanner scanner = new Scanner(System.in);
         String cityName = "";
@@ -23,6 +25,8 @@ public class ReportFromConsole {
         }
 
         return new WeatherRequest(cityName).getFullWeatherInfo();
+
+
     }
 
 
