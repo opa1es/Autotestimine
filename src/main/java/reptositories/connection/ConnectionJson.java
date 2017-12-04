@@ -13,27 +13,27 @@ import static reptositories.connection.ConnectTo.buildLinkForRequest;
 
 public class ConnectionJson {
 
-    public static InputStream getConnectionRequest(City city) throws IOException {
+    public InputStream getConnectionRequest(City city) throws IOException {
         URLConnection connection = new URL(buildLinkForRequest(city)).openConnection();
         connection.connect();
         return connection.getInputStream();
     }
 
 
-    public static InputStream getConnectionForecast(City city) throws IOException {
+    public InputStream getConnectionForecast(City city) throws IOException {
         URLConnection connection = new URL(buildLinkForForecast(city)).openConnection();
         connection.connect();
         return connection.getInputStream();
     }
 
-    public static InputStream getConnectionRequest(String city) throws IOException {
+    public InputStream getConnectionRequest(String city) throws IOException {
         URLConnection connection = new URL(buildLinkForRequest(city)).openConnection();
         connection.connect();
         return connection.getInputStream();
     }
 
 
-    public static InputStream getConnectionForecast(String city) throws IOException {
+    public InputStream getConnectionForecast(String city) throws IOException {
         URLConnection connection = new URL(buildLinkForForecast(city)).openConnection();
         connection.connect();
         return connection.getInputStream();

@@ -13,7 +13,7 @@ public class JsonObjects {
 
     public JSONObject getRequest(City city) throws IOException {
 
-        InputStreamReader inputStreamReader = new InputStreamReader(ConnectionJson.getConnectionRequest(city));
+        InputStreamReader inputStreamReader = new InputStreamReader(new ConnectionJson().getConnectionRequest(city));
         BufferedReader reader = new BufferedReader(inputStreamReader);
 
         StringBuilder stringBuilder = new StringBuilder();
@@ -27,7 +27,7 @@ public class JsonObjects {
 
 
     public JSONObject getForecast(City city) throws IOException {
-        InputStreamReader inputStreamReader = new InputStreamReader(ConnectionJson.getConnectionForecast(city));
+        InputStreamReader inputStreamReader = new InputStreamReader(new ConnectionJson().getConnectionForecast(city));
         BufferedReader reader = new BufferedReader(inputStreamReader);
 
         StringBuilder stringBuilder = new StringBuilder();
@@ -42,7 +42,7 @@ public class JsonObjects {
 
     public JSONObject getRequest(String city) throws IOException {
 
-        InputStreamReader inputStreamReader = new InputStreamReader(ConnectionJson.getConnectionRequest(city));
+        InputStreamReader inputStreamReader = new InputStreamReader(new ConnectionJson().getConnectionRequest(city));
         BufferedReader reader = new BufferedReader(inputStreamReader);
 
         StringBuilder stringBuilder = new StringBuilder();
@@ -56,7 +56,7 @@ public class JsonObjects {
 
 
     public JSONObject getForecast(String city) throws IOException {
-        InputStreamReader inputStreamReader = new InputStreamReader(ConnectionJson.getConnectionForecast(city));
+        InputStreamReader inputStreamReader = new InputStreamReader(new ConnectionJson().getConnectionForecast(city));
         BufferedReader reader = new BufferedReader(inputStreamReader);
 
         StringBuilder stringBuilder = new StringBuilder();
