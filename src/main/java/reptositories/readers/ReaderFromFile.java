@@ -24,7 +24,6 @@ public class ReaderFromFile {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         return cityNames;
 
     }

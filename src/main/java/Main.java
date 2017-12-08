@@ -13,7 +13,7 @@ public class Main {
         ReportFromConsole reportFromConsole = new ReportFromConsole();
 
 
-        System.out.println(reportFromConsole.getFullWeatherInfoByInput());
+        System.out.println(reportByNames.getFullWeatherReportAndWriteToFile());
 
 
 

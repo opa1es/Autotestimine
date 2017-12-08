@@ -1,6 +1,7 @@
 package reptositories.weatherReports;
 
 
+import reptositories.requests.WeatherForecast;
 import reptositories.requests.WeatherRequest;
 
 import java.util.Scanner;
@@ -24,7 +25,7 @@ public class ReportFromConsole {
             }
         }
 
-        return new WeatherRequest(cityName).getFullWeatherInfo();
+        return new WeatherRequest(cityName).toString() + new WeatherForecast(cityName).toString();
 
 
     }

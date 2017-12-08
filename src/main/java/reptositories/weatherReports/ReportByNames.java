@@ -3,6 +3,7 @@ package reptositories.weatherReports;
 
 import reptositories.readers.ReaderFromFile;
 import reptositories.readers.WriterToFile;
+import reptositories.requests.WeatherForecast;
 import reptositories.requests.WeatherRequest;
 
 public class ReportByNames {
@@ -14,9 +15,8 @@ public class ReportByNames {
         String output = "";
         for (String city : readerFromFile.readCityNamesAndReturnArray()) {
             WeatherRequest weatherRequest = new WeatherRequest(city);
-            output += weatherRequest.getFullWeatherInfo();
-            output += "\n";
-
+            WeatherForecast weatherForecast = new WeatherForecast(city);
+            output += weatherRequest.toString() + weatherForecast.toString() + "\n";
         }
 
         writerToFile.writeFullInfo(output);
