@@ -11,7 +11,7 @@ import java.net.URLConnection;
 public class ConnectionJson {
 
 
-    ConnectionAddress connectTo;
+    private ConnectionAddress connectTo;
 
 
     public ConnectionJson(){

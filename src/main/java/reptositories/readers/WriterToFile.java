@@ -7,10 +7,10 @@ import java.io.IOException;
 public class WriterToFile {
 
 
-    public void writeFullInfo(String string) {
+    public void writeToFile(String stringToWrite, String fileToWrite) {
         try {
-            FileWriter writer = new FileWriter("output.txt", true);
-            writer.write(string);
+            FileWriter writer = new FileWriter(fileToWrite, true);
+            writer.write(stringToWrite);
             writer.close();
 
         } catch (IOException e) {

@@ -3,9 +3,11 @@ import reptositories.requests.WeatherRequest;
 import reptositories.weatherReports.ReportByNames;
 import reptositories.weatherReports.ReportFromConsole;
 
+import java.io.IOException;
+
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         City cityTallinn = new City("Tallinn","EE");
 
         WeatherRequest requestWeather = new WeatherRequest("Tallinn");
@@ -13,7 +15,7 @@ public class Main {
         ReportFromConsole reportFromConsole = new ReportFromConsole();
 
 
-        System.out.println(reportByNames.getFullWeatherReportAndWriteToFile());
+        System.out.println(reportByNames.getFullWeatherReportAndWriteToFile("output.txt"));
 
 
 
