@@ -14,7 +14,6 @@ class ConnectionAddress {
         return URL_REQUEST + city.getName() + "," + city.getCode() + "&APPID=" + KEY;
     }
 
-
      String buildLinkForForecast(City city) {
         return URL_FORECAST + city.getName() + "," + city.getCode() + "&APPID=" + KEY;
     }
