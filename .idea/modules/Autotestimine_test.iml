@@ -14,6 +14,15 @@
     <orderEntry type="library" name="Gradle: org.hamcrest:hamcrest-core:1.3" level="project" />
     <orderEntry type="library" name="json-20170516" level="application" />
     <orderEntry type="library" name="json-jena-1.0" level="application" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../javaOOP/mockito-core-2.11.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
   <component name="TestModuleProperties" production-module="Autotestimine_main" />
 </module>
