@@ -7,12 +7,6 @@ public class Coordinates {
     private double coordinateX;
     private double coordinateY;
 
-
-    String getCoordinatesInFormat() {
-        return this.coordinateX + ":" + this.coordinateY;
-    }
-
-
     public double getCoordinateX() {
         return coordinateX;
     }
@@ -27,5 +21,13 @@ public class Coordinates {
         this.coordinateY = coordinateY;
 
     }
+
+    @Override
+    public String toString(){
+            return this.coordinateX + ":" + this.coordinateY;
+
+    }
+
+
 
 }

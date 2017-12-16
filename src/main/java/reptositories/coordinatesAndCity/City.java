@@ -4,11 +4,13 @@ public class City {
 
     private String name;
     private String code;
-    private Coordinates coordinates = new Coordinates();
+    private Coordinates coordinates;
 
     public City(String name, String code) {
         this.name = name;
         this.code = code;
+        coordinates = new Coordinates();
+
     }
 
     public City(String name) {
@@ -31,10 +33,6 @@ public class City {
         this.code = code;
     }
 
-
-    public String getCityCoordinatesAsString() {
-        return coordinates.getCoordinatesInFormat();
-    }
 
     public Coordinates getCoordinates() {
         return coordinates;

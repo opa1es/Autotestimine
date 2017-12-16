@@ -60,7 +60,7 @@ public class WeatherRequest {
 
 
     public String getCityCoordinatesAsString() {
-        return this.city.getCityCoordinatesAsString();
+        return this.city.getCoordinates().toString();
     }
 
     public String getCurrentTemperatureInCelsius() {
