@@ -2,8 +2,8 @@ package reptositories.weatherreports;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import reptositories.requests.WeatherForecast;
-import reptositories.requests.WeatherRequest;
+import reptositories.weatherdata.WeatherForecast;
+import reptositories.weatherdata.WeatherRequest;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;

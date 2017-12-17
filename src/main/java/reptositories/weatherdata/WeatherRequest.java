@@ -1,28 +1,28 @@
-package reptositories.requests;
+package reptositories.weatherdata;
 
 
-import org.json.JSONArray;
-import org.json.JSONObject;
 import reptositories.coordinatesandcity.City;
 import reptositories.json.JsonBuilder;
+import reptositories.jsonparser.RequestParser;
 import reptositories.unitsconverter.ConvertTemperature;
 
 import java.io.IOException;
 
 public class WeatherRequest {
 
-    private JsonBuilder jsonBuilder = new JsonBuilder();
+
     private City city;
     private double temperature;
-
-    private JSONArray current;
+    private RequestParser requestParser;
+    private JsonBuilder jsonBuilder;
 
     public WeatherRequest(City city) {
         this.city = city;
-
+        this.jsonBuilder = new JsonBuilder();
         try {
-            this.setRequest(jsonBuilder.getRequest(city));
-            this.setCityCoordinates(jsonBuilder.getRequest(city));
+            this.requestParser = new RequestParser(jsonBuilder.getRequest(city));
+            this.setCityCoordinates();
+            this.setCurrentTemperature();
             this.setCurrentTemperature();
         } catch (IOException e) {
             e.printStackTrace();
@@ -31,10 +31,10 @@ public class WeatherRequest {
 
     public WeatherRequest(String cityName) {
         this.city = new City(cityName);
-
+        this.jsonBuilder = new JsonBuilder();
         try {
-            this.setRequest(jsonBuilder.getRequest(cityName));
-            this.setCityCoordinates(jsonBuilder.getRequest(cityName));
+            this.requestParser = new RequestParser(jsonBuilder.getRequest(cityName));
+            this.setCityCoordinates();
             this.setCurrentTemperature();
         } catch (IOException e) {
             e.printStackTrace();
@@ -42,19 +42,12 @@ public class WeatherRequest {
     }
 
 
-    private void setRequest(JSONObject jsonObject) {
-        this.current = jsonObject.getJSONArray("list");
-    }
-
-    private void setCityCoordinates(JSONObject jsonObject) {
-        double xxx = jsonObject.getJSONArray("list").getJSONObject(0).getJSONObject("coord").getDouble("lon");
-        double yyy = jsonObject.getJSONArray("list").getJSONObject(0).getJSONObject("coord").getDouble("lat");
-        this.city.getCoordinates().setCoordinates(xxx, yyy);
+    private void setCityCoordinates() {
+        this.city.setCoordinates(requestParser.getCityCoordinates());
     }
 
     private void setCurrentTemperature() {
-        this.temperature = this.current.getJSONObject(0).getJSONObject("main").getDouble("temp");
-
+        this.temperature = this.requestParser.getTemperature();
 
     }
 
@@ -68,22 +61,12 @@ public class WeatherRequest {
         return new ConvertTemperature().kelvinToCelsius(getTemperature()) + " C";
     }
 
-
-    public JsonBuilder getJsonBuilder() {
-        return jsonBuilder;
-    }
-
     public City getCity() {
         return city;
     }
 
     public double getTemperature() {
         return temperature;
-    }
-
-
-    public JSONArray getCurrent() {
-        return current;
     }
 
 

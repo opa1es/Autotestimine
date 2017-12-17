@@ -3,8 +3,8 @@ package reptositories.weatherreports;
 
 import reptositories.readers.ReaderFromFile;
 import reptositories.readers.WriterToFile;
-import reptositories.requests.WeatherForecast;
-import reptositories.requests.WeatherRequest;
+import reptositories.weatherdata.WeatherForecast;
+import reptositories.weatherdata.WeatherRequest;
 
 import java.io.IOException;
 

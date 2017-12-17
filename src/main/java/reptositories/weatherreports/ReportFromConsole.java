@@ -2,8 +2,8 @@ package reptositories.weatherreports;
 
 
 import reptositories.consolereader.ConsoleReader;
-import reptositories.requests.WeatherForecast;
-import reptositories.requests.WeatherRequest;
+import reptositories.weatherdata.WeatherForecast;
+import reptositories.weatherdata.WeatherRequest;
 
 public class ReportFromConsole {
 

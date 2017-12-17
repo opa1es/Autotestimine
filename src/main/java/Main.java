@@ -1,6 +1,6 @@
 import reptositories.consolereader.ConsoleReader;
 import reptositories.coordinatesandcity.City;
-import reptositories.requests.WeatherRequest;
+import reptositories.weatherdata.WeatherRequest;
 import reptositories.weatherreports.ReportByNames;
 import reptositories.weatherreports.ReportFromConsole;
 
