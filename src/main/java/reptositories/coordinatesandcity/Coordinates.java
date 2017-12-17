@@ -14,7 +14,16 @@ public class Coordinates {
     public double getCoordinateY() {
         return coordinateY;
     }
+    public Coordinates(){
 
+    }
+
+
+    public Coordinates(double coordinateX, double coordinateY) {
+        this.coordinateX = coordinateX;
+        this.coordinateY = coordinateY;
+
+    }
 
     public void setCoordinates(double coordinateX, double coordinateY) {
         this.coordinateX = coordinateX;

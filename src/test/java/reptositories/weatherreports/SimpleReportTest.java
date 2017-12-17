@@ -48,4 +48,33 @@ class SimpleReportTest {
 
     }
 
+
+    @Test
+    void testGetReport2() {
+
+
+        SimpleReport simpleReport = new SimpleReport();
+
+        when(weatherRequest.toString()).thenReturn("test");
+        when(weatherForecast.toString()).thenReturn("1");
+
+        assertEquals(simpleReport.getWeatherReport(weatherRequest, weatherForecast), "test1");
+    }
+
+
+    @Test
+    void testGetReport3() {
+
+        SimpleReport simpleReport = new SimpleReport();
+
+        when(weatherRequest.toString()).thenReturn("testWithMocking");
+        when(weatherForecast.toString()).thenReturn("testWithMocking");
+
+        assertEquals(simpleReport.getWeatherReport(weatherRequest, weatherForecast), "testWithMockingtestWithMocking");
+
+    }
+
+
+
+
 }

@@ -13,5 +13,12 @@ class CityTest {
         assertEquals(city.getCoordinates().toString(),"111.12:111.12");
 
     }
+    @Test
+    void testGetCityCoordinatesAsString1() {
+        City city = new City("Tallinn");
+        city.getCoordinates().setCoordinates(321.12,321.12);
+        assertEquals(city.getCoordinates().toString(),"321.12:321.12");
+
+    }
 
 }

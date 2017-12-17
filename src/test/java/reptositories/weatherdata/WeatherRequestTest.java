@@ -1,27 +1,24 @@
 package reptositories.weatherdata;
 
 import org.junit.Test;
+import reptositories.coordinatesandcity.City;
+import reptositories.exceptions.NoSuchCityException;
 
 
 public class WeatherRequestTest {
-    @Test
-    public void getCityCoordinatesAsString() throws Exception {
 
+    @Test(expected = NoSuchCityException.class)
+    public void testThrowExceptionWhenGetsWrongCityAsString() {
+        WeatherRequest weatherRequest = new WeatherRequest("NotExistingCity");
+        System.out.println(weatherRequest.toString());
     }
 
-    @Test
-    public void getCurrentTemperatureInCelsius() throws Exception {
 
-    }
-
-    @Test
-    public void getCity() throws Exception {
-
-    }
-
-    @Test
-    public void getTemperature() throws Exception {
-
+    @Test(expected = NoSuchCityException.class)
+    public void testThrowExceptionWhenGetsWrongCityAsObject() {
+        City city = new City("UNKNOWN","EE");
+        WeatherRequest weatherRequest = new WeatherRequest(city);
+        System.out.println(weatherRequest.toString());
     }
 
 }
