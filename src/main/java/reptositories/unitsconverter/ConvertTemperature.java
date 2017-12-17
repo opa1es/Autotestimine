@@ -1,4 +1,4 @@
-package reptositories.unitsConverter;
+package reptositories.unitsconverter;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

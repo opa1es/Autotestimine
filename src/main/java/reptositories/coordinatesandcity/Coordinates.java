@@ -1,4 +1,4 @@
-package reptositories.coordinatesAndCity;
+package reptositories.coordinatesandcity;
 
 
 public class Coordinates {

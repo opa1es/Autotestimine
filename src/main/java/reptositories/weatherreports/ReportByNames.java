@@ -1,4 +1,4 @@
-package reptositories.weatherReports;
+package reptositories.weatherreports;
 
 
 import reptositories.readers.ReaderFromFile;

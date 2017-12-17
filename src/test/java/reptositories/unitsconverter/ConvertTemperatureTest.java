@@ -1,4 +1,4 @@
-package reptositories.unitsConverter;
+package reptositories.unitsconverter;
 
 import org.junit.jupiter.api.Test;
 

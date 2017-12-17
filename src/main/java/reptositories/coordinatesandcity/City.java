@@ -1,15 +1,14 @@
-package reptositories.coordinatesAndCity;
+package reptositories.coordinatesandcity;
 
 public class City {
 
     private String name;
     private String code;
-    private Coordinates coordinates;
+    private Coordinates coordinates = new Coordinates();
 
     public City(String name, String code) {
         this.name = name;
         this.code = code;
-        coordinates = new Coordinates();
 
     }
 

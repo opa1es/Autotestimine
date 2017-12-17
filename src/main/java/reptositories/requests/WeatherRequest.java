@@ -3,9 +3,9 @@ package reptositories.requests;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import reptositories.coordinatesAndCity.City;
+import reptositories.coordinatesandcity.City;
 import reptositories.json.JsonBuilder;
-import reptositories.unitsConverter.ConvertTemperature;
+import reptositories.unitsconverter.ConvertTemperature;
 
 import java.io.IOException;
 

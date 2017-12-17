@@ -1,6 +1,6 @@
 package reptositories.connection;
 
-import reptositories.coordinatesAndCity.City;
+import reptositories.coordinatesandcity.City;
 
 
 class ConnectionAddress {

@@ -2,7 +2,7 @@ package reptositories.json;
 
 import org.json.JSONObject;
 import reptositories.connection.ConnectionJson;
-import reptositories.coordinatesAndCity.City;
+import reptositories.coordinatesandcity.City;
 
 import java.io.BufferedReader;
 import java.io.IOException;

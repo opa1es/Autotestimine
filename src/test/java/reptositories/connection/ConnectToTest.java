@@ -1,7 +1,7 @@
 package reptositories.connection;
 
 import org.junit.Test;
-import reptositories.coordinatesAndCity.City;
+import reptositories.coordinatesandcity.City;
 
 import static org.junit.Assert.assertEquals;
 public class ConnectToTest {

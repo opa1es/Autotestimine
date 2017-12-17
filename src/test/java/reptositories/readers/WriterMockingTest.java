@@ -11,6 +11,7 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 public class WriterMockingTest {
+    //wrong tests
     @Test
     public void testFileWriterWrites() {
         WriterToFile writerMock = mock(WriterToFile.class);

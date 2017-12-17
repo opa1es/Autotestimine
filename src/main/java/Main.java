@@ -1,7 +1,8 @@
-import reptositories.coordinatesAndCity.City;
+import reptositories.consolereader.ConsoleReader;
+import reptositories.coordinatesandcity.City;
 import reptositories.requests.WeatherRequest;
-import reptositories.weatherReports.ReportByNames;
-import reptositories.weatherReports.ReportFromConsole;
+import reptositories.weatherreports.ReportByNames;
+import reptositories.weatherreports.ReportFromConsole;
 
 import java.io.IOException;
 
@@ -15,7 +16,7 @@ public class Main {
         ReportFromConsole reportFromConsole = new ReportFromConsole();
 
 
-        System.out.println(reportByNames.getFullWeatherReportAndWriteToFile("output.txt"));
+        System.out.println(reportFromConsole.getFullWeatherInfoByInput(new ConsoleReader()));
 
 
 
