@@ -2,8 +2,10 @@ package reptositories.jsonparser;
 
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 import reptositories.coordinatesandcity.Coordinates;
+import reptositories.exceptions.NoSuchCityException;
 
 public class RequestParser {
 
@@ -16,12 +18,25 @@ public class RequestParser {
     }
 
     public double getTemperature() {
-        return this.current.getJSONObject(0).getJSONObject("main").getDouble("temp");
+        double temp = 0;
+        try {
+            this.current.getJSONObject(0).getJSONObject("main").getDouble("temp");
+
+        } catch (JSONException e) {
+            throw new NoSuchCityException();
+        }
+        return temp;
     }
 
     public Coordinates getCityCoordinates() {
-        double xxx = current.getJSONObject(0).getJSONObject("coord").getDouble("lon");
-        double yyy = current.getJSONObject(0).getJSONObject("coord").getDouble("lat");
+        double xxx;
+        double yyy;
+        try{
+            xxx = current.getJSONObject(0).getJSONObject("coord").getDouble("lon");
+            yyy = current.getJSONObject(0).getJSONObject("coord").getDouble("lat");
+        }catch (JSONException e){
+            throw new NoSuchCityException();
+        }
         Coordinates coordinates = new Coordinates();
         coordinates.setCoordinates(xxx, yyy);
         return coordinates;

@@ -1,5 +1,6 @@
-import reptositories.consolereader.ConsoleReader;
 import reptositories.coordinatesandcity.City;
+import reptositories.readers.ReaderFromFile;
+import reptositories.readers.WriterToFile;
 import reptositories.weatherdata.WeatherRequest;
 import reptositories.weatherreports.ReportByNames;
 import reptositories.weatherreports.ReportFromConsole;
@@ -14,9 +15,11 @@ public class Main {
         WeatherRequest requestWeather = new WeatherRequest("Tallinn");
         ReportByNames reportByNames = new ReportByNames();
         ReportFromConsole reportFromConsole = new ReportFromConsole();
+        ReaderFromFile readerFromFile = new ReaderFromFile();
+        WriterToFile writerToFile = new WriterToFile();
 
 
-        System.out.println(reportFromConsole.getFullWeatherInfoByInput(new ConsoleReader()));
+        System.out.println(reportByNames.getFullWeatherReportAndWriteToFile(readerFromFile,writerToFile,"output.txt"));
 
 
 
