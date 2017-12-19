@@ -1,3 +1,4 @@
+import reptositories.consolereader.ConsoleReader;
 import reptositories.coordinatesandcity.City;
 import reptositories.readers.ReaderFromFile;
 import reptositories.readers.WriterToFile;
@@ -17,9 +18,10 @@ public class Main {
         ReportFromConsole reportFromConsole = new ReportFromConsole();
         ReaderFromFile readerFromFile = new ReaderFromFile();
         WriterToFile writerToFile = new WriterToFile();
+        ConsoleReader consoleReader = new ConsoleReader();
 
 
-        System.out.println(reportByNames.getFullWeatherReportAndWriteToFile(readerFromFile,writerToFile,"output.txt"));
+        System.out.println(reportFromConsole.getFullWeatherInfoByInput(consoleReader));
 
 
 

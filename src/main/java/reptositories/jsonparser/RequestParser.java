@@ -18,9 +18,9 @@ public class RequestParser {
     }
 
     public double getTemperature() {
-        double temp = 0;
+        double temp;
         try {
-            this.current.getJSONObject(0).getJSONObject("main").getDouble("temp");
+            temp = this.current.getJSONObject(0).getJSONObject("main").getDouble("temp");
 
         } catch (JSONException e) {
             throw new NoSuchCityException();
@@ -31,10 +31,10 @@ public class RequestParser {
     public Coordinates getCityCoordinates() {
         double xxx;
         double yyy;
-        try{
+        try {
             xxx = current.getJSONObject(0).getJSONObject("coord").getDouble("lon");
             yyy = current.getJSONObject(0).getJSONObject("coord").getDouble("lat");
-        }catch (JSONException e){
+        } catch (JSONException e) {
             throw new NoSuchCityException();
         }
         Coordinates coordinates = new Coordinates();

@@ -45,7 +45,7 @@ public class RequestParserTest {
         jsonBuilderMock = mock(JsonBuilder.class);
         when(jsonBuilderMock.getRequest(anyString())).thenReturn(jsonObjectTallinn);
         requestParserTallinn = new RequestParser(jsonBuilderMock.getRequest(anyString()));
-        assertEquals(0.0, requestParserTallinn.getTemperature());
+        assertEquals(273.15, requestParserTallinn.getTemperature());
     }
 
     @Test
@@ -54,7 +54,7 @@ public class RequestParserTest {
         jsonBuilderMock = mock(JsonBuilder.class);
         when(jsonBuilderMock.getRequest(anyString())).thenReturn(jsonObjectMoscow);
         requestParserMoscow = new RequestParser(jsonBuilderMock.getRequest(anyString()));
-        assertEquals(0.0, requestParserMoscow.getTemperature());
+        assertEquals(272.71, requestParserMoscow.getTemperature());
     }
 
 
